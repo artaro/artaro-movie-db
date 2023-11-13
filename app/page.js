@@ -1,6 +1,5 @@
 import SearchBar from "@/components/SearchBar";
-import MovieList from "@/components/movieList";
-
+import MovieList from "@/components/MovieList";
 import styles from "@/styles/page.module.css";
 
 export default function Home() {
