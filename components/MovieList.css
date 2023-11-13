@@ -7,6 +7,13 @@
 
 .movie-item {
   position: relative;
+  transition: transform 0.3s ease;
+}
+
+.movie-item:hover {
+  transform: scale(1.5) translate3d(0px, 0px, 0px);
+  z-index: 1;
+  cursor: pointer;
 }
 
 .image-container {
@@ -33,14 +40,6 @@
 .overlay p {
   color: #fff;
   margin: 0;
-}
-
-.image-container:hover img {
-  transform: scale(1.1);
-}
-
-.image-container:hover .overlay {
-  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {

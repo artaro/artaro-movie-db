@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import "./MovieList.css";
 import movieService from "@/api/movie";
-import { setMovieList } from "@/redux/movieSlice";
+import { setMovieList, setTotalMoviePage } from "@/redux/movieSlice";
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
@@ -19,6 +19,7 @@ const MovieList = () => {
       try {
         const res = await movieService.getTrendingMovie();
         dispatch(setMovieList(res.results));
+        dispatch(setTotalMoviePage(res.total_pages));
         setMovies(res.results);
       } catch (error) {
         console.error("Error fetching trending movies: ", error);
@@ -50,7 +51,7 @@ const MovieList = () => {
               width={175}
               height={250}
             />
-            <div className="overlay"></div>
+            <div className="overlay">55</div>
           </div>
         </div>
       ))}

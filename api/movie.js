@@ -14,11 +14,18 @@ const movieService = {
       throw new Error("Error get trending movies: ", error.message);
     }
   },
-  searchMovie: async (query, page = 1) => {
+  searchMovie: async (
+    query,
+    include_adult = false,
+    language = "en-US",
+    page = 1
+  ) => {
     try {
-      const response = await API.get("/search/keyword", {
+      const response = await API.get("/search/movie", {
         params: {
           query,
+          include_adult,
+          language,
           page,
         },
       });
