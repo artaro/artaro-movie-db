@@ -1,40 +1,47 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { FaSearch, FaTimes } from "react-icons/fa";
+import { setSearchResults } from "@/redux/movieSlice";
+import movieService from "@/api/movie";
 
-const SearchBar = ({ onSearch }) => {
+import "./SearchBar.css";
+
+const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
-  // State to track whether to show the clear button
   const [showClearButton, setShowClearButton] = useState(false);
 
-  // Timer to delay API search after typing
+  const dispatch = useDispatch();
+
   let searchTimer;
 
-  // Function to handle input change
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-
-    // Show clear button if there's input
     setShowClearButton(value.length > 0);
 
-    // Clear existing timer and set a new one
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => {
-      // Trigger API search after a brief pause
-      onSearch(value);
-    }, 500); // Adjust the delay as needed
+      handleSearch(value);
+    }, 500);
   };
 
-  // Function to handle clear button click
   const handleClearClick = () => {
     setSearchTerm("");
     setShowClearButton(false);
-    onSearch(""); // You may want to trigger a search with an empty string to reset results
+    handleSearch("");
   };
 
-  // Effect to clean up the timer on component unmount
+  const handleSearch = async (query) => {
+    try {
+      const res = await movieService.searchMovie(query);
+      dispatch(setSearchResults(res));
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
   useEffect(() => {
     return () => {
       clearTimeout(searchTimer);
@@ -42,17 +49,16 @@ const SearchBar = ({ onSearch }) => {
   }, [searchTimer]);
 
   return (
-    <div>
+    <div className="input-wrapper">
+      <FaSearch id="search-icon" />
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Avengers"
         value={searchTerm}
         onChange={handleInputChange}
       />
       {showClearButton && (
-        <button type="button" onClick={handleClearClick}>
-          Clear
-        </button>
+        <FaTimes id="clear-icon" onClick={handleClearClick} />
       )}
     </div>
   );
