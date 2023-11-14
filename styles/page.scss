@@ -1,8 +1,13 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 6rem 2rem 2rem 2rem;
+  }
 }

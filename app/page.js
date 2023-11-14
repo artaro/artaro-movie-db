@@ -9,10 +9,8 @@ export default function Home() {
     <>
       <Navbar />
       <main className="main">
-        <div>
-          <SearchBar />
-          <MovieList />
-        </div>
+        <SearchBar />
+        <MovieList />
       </main>
     </>
   );

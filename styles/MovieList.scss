@@ -1,13 +1,16 @@
 .movie-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: auto;
+  grid-template-columns: repeat(5, auto);
   gap: 16px;
   margin-bottom: 32px;
 }
 
 .movie-item {
+  width: 175px;
+  height: 250px;
+  display: flex;
   position: relative;
+  overflow: hidden;
   transition: transform 0.3s ease;
 }
 
@@ -25,6 +28,10 @@
   animation: loading 1s infinite;
 }
 
+.pagination-wrapper {
+  margin: 0 32px 0 32px;
+}
+
 @keyframes loading {
   0% {
     background-position: 200% 0;
@@ -34,14 +41,19 @@
   }
 }
 
-.image-container {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-}
-
 @media screen and (max-width: 768px) {
   .movie-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
+    gap: 32px;
+  }
+
+  .movie-item {
+    width: 140px;
+    height: 200px;
+  }
+
+  .movie-item.skeleton {
+    width: 140px;
+    height: 200px;
   }
 }

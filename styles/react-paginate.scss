@@ -5,6 +5,7 @@ ul.react-paginate {
   justify-content: space-between;
   list-style-type: none;
   padding: 0 5rem;
+  font-size: 14px;
 }
 
 ul.react-paginate li a {
@@ -29,4 +30,10 @@ ul.react-paginate li.disabled a {
 ul.react-paginate li.disable,
 ul.react-paginate li.disabled a {
   cursor: default;
+}
+
+@media screen and (max-width: 768px) {
+  ul.react-paginate {
+    font-size: 12px;
+  }
 }

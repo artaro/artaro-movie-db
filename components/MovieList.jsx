@@ -50,14 +50,11 @@ const MovieList = () => {
             ))
           : movieData.results.map((movie, index) => (
               <div key={index} className="movie-item">
-                <div className="image-container">
-                  <Image
-                    src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                    alt={movie.title}
-                    width={175}
-                    height={250}
-                  />
-                </div>
+                <Image
+                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                  alt={movie.title}
+                  fill
+                />
               </div>
             ))}
       </div>
