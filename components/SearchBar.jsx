@@ -6,7 +6,7 @@ import { FaSearch, FaTimes } from "react-icons/fa";
 import { setSearchResults } from "@/redux/movieSlice";
 import movieService from "@/api/movie";
 
-import "./SearchBar.css";
+import "@/styles/SearchBar.scss";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -53,7 +53,7 @@ const SearchBar = () => {
       <FaSearch id="search-icon" />
       <input
         type="text"
-        placeholder="Avengers"
+        placeholder="You can search movie here but later XD"
         value={searchTerm}
         onChange={handleInputChange}
       />

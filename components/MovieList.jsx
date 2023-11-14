@@ -7,7 +7,7 @@ import Image from "next/image";
 import { setMovieList } from "@/redux/movieSlice";
 import movieService from "@/api/movie";
 
-import "./MovieList.css";
+import "@/styles/MovieList.scss";
 import "@/styles/react-paginate.scss";
 
 const MovieList = () => {

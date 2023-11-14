@@ -1,15 +1,19 @@
 import SearchBar from "@/components/SearchBar";
 import MovieList from "@/components/MovieList";
-import styles from "@/styles/page.module.css";
+import Navbar from "@/components/Navbar";
+
+import "@/styles/page.scss";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div>
-        <h1>Artaro Movie DB</h1>
-        <SearchBar />
-        <MovieList />
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <main className="main">
+        <div>
+          <SearchBar />
+          <MovieList />
+        </div>
+      </main>
+    </>
   );
 }
