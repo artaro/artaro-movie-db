@@ -8,4 +8,17 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #171717;
+}
+
+h1 {
+  color: #da0037;
+}
+
+.primary {
+  color: #da0037;
+}
+
+.secondary {
+  color: #ededed;
 }

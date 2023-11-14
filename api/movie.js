@@ -1,17 +1,18 @@
 import API from "./api";
 
 const movieService = {
-  getTrendingMovie: async (language = "en-US") => {
+  getPopularMoviesByPage: async (language, page) => {
     try {
-      const response = await API.get("/trending/movie/day", {
+      const response = await API.get("/movie/popular", {
         params: {
           language,
+          page,
         },
       });
 
       return response.data;
     } catch (error) {
-      throw new Error("Error get trending movies: ", error.message);
+      throw new Error("Error get popular movies: ", error.message);
     }
   },
   searchMovie: async (
