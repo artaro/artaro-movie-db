@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import NavbarItem from "./NavbarItem";
-
+import SearchBar from "./SearchBar";
 import "@/styles/Navbar.scss";
 
 const Navbar = () => {
@@ -13,10 +13,15 @@ const Navbar = () => {
         alt="Artaro"
         width={}
         height={}/> */}
-        <h1>ARTARO MOVIE DB</h1>
-        <div className="nav-items">
-          <NavbarItem label="Home" />
-          <NavbarItem label="Favorite" />
+        <div className="route-items">
+          <h1>ARTARO MOVIE DB</h1>
+          <div className="nav-items">
+            <NavbarItem label="Home" />
+            <NavbarItem label="Favorite" />
+          </div>
+        </div>
+        <div className="action-items">
+          <SearchBar />
         </div>
       </div>
     </nav>

@@ -7,10 +7,17 @@
 .nav-wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   transition: 0.5ms;
-  padding: 16px 32px;
+  padding: 16px 22%;
   background-color: #171717;
+}
+
+.route-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .nav-items {
@@ -18,4 +25,17 @@
   flex-direction: row;
   margin-left: 38px;
   gap: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-wrapper {
+    padding: 16px 38px;
+    gap: 8px;
+  }
+  .route-items h1 {
+    font-size: 18px;
+  }
+  .nav-items {
+    display: none;
+  }
 }

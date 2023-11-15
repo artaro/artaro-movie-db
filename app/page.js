@@ -1,4 +1,3 @@
-import SearchBar from "@/components/SearchBar";
 import MovieList from "@/components/MovieList";
 import Navbar from "@/components/Navbar";
 
@@ -9,7 +8,6 @@ export default function Home() {
     <>
       <Navbar />
       <main className="main">
-        <SearchBar />
         <MovieList />
       </main>
     </>

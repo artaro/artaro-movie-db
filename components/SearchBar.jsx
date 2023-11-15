@@ -51,12 +51,7 @@ const SearchBar = () => {
   return (
     <div className="input-wrapper">
       <FaSearch id="search-icon" />
-      <input
-        type="text"
-        placeholder="You can search movie here but later XD"
-        value={searchTerm}
-        onChange={handleInputChange}
-      />
+      <input type="text" value={searchTerm} onChange={handleInputChange} />
       {showClearButton && (
         <FaTimes id="clear-icon" onClick={handleClearClick} />
       )}
