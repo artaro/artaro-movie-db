@@ -15,12 +15,7 @@ const movieService = {
       throw new Error("Error get popular movies: ", error.message);
     }
   },
-  searchMovie: async (
-    query,
-    include_adult = false,
-    language = "en-US",
-    page = 1
-  ) => {
+  searchMovie: async (query, include_adult, language, page) => {
     try {
       const response = await API.get("/search/movie", {
         params: {

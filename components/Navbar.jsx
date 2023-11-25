@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import NavbarItem from "./NavbarItem";
-import SearchBar from "./SearchBar";
+import SearchBox from "./SearchBox";
 import "@/styles/Navbar.scss";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { searchValue, setSearchValue } = props;
   return (
     <nav className="nav-container">
       <div className="nav-wrapper">
@@ -21,7 +22,10 @@ const Navbar = () => {
           </div>
         </div>
         <div className="action-items">
-          <SearchBar />
+          <SearchBox
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
         </div>
       </div>
     </nav>

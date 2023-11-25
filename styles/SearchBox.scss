@@ -1,4 +1,5 @@
 .input-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -26,5 +27,7 @@ input:focus {
   color: #da0037;
 }
 
-@media screen and (max-width: 768px) {
+#clear-icon {
+  position: absolute;
+  right: 12px;
 }
