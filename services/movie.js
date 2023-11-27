@@ -12,7 +12,7 @@ const movieService = {
 
       return response.data;
     } catch (error) {
-      throw new Error("Error get popular movies: ", error.message);
+      throw new Error("Error getting popular movies: ", error.message);
     }
   },
   searchMovie: async (query, include_adult, language, page) => {
