@@ -1,0 +1,37 @@
+.user-action-wrapper {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.log-in {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.log-out {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  cursor: pointer;
+
+  & > span {
+    margin-left: 8px;
+  }
+}
+
+#user-profile {
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+#user-logout-icon,
+#user-login-icon {
+  width: 16px;
+  height: 16px;
+  color: #da0037;
+  cursor: pointer;
+}

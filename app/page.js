@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import MovieList from "@/components/MovieList";
 
 import "@/styles/page.scss";
-import movieService from "@/api/movie";
+import movieService from "@/services/movie";
 
 export default function Home() {
   const [movies, setMovies] = useState({
